@@ -39,9 +39,9 @@ The update interval is also set in DEV_Sensors.h:
 
 cppconst int timeupdate = 300000;  // milliseconds — default is 5 minutes
 
-How It Works
+## How It Works
 
-Reading cycle (per sensor)
+Reading cycle (per sensor):
 
 GPIO pin powers up the sensor and ADS1115.
 A 2–3 second warm-up delay allows the ADC to stabilise.
@@ -52,7 +52,7 @@ The sensor and ADC are powered down.
 The raw ADC value is mapped to a 0–100% moisture range and sent to HomeKit.
 The ADC value and humidity percentage are written to InfluxDB.
 
-Moisture calculation
+Moisture calculation:
 
 humidity% = 100 - ((adc_value / 32767) × 100)
 
