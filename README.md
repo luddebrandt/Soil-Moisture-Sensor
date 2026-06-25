@@ -1,15 +1,15 @@
 # Soil-Moisture-Sensor
 An ESP32-based HomeKit bridge that monitors soil moisture across three capacitive sensors, exposes them to Apple Home via HomeSpan, and logs readings to InfluxDB and visualized using Grafana. Alerts can be generated when plants need to be watered.
 
-
 ## Overview
 
 This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) that reads three capacitive soil moisture sensors through an ADS1115 ADC. Each sensor is powered only during a reading to reduce corrosion and power consumption. Readings are reported to Apple Home as humidity values and pushed to an InfluxDB instance for long-term logging and dashboarding.
 
-
 ## Hardware
 
-ComponentDescriptionESP32Main microcontroller (e.g. AZDelivery ESP32)ADS111516-bit I²C ADC (reads up to 4 analog channels)Capacitive soil moisture sensors × 3Connected to ADC channels 0, 1, and 2
+- ESP32Main microcontroller (e.g. AZDelivery ESP32) 
+- ADS111516-bit I²C ADC (reads up to 4 analog channels)
+- Capacitive soil moisture sensors
 
 Pin Assignments
 
@@ -22,12 +22,9 @@ Sensors are powered via dedicated GPIO pins so they are only energized during a 
 
 Install these libraries through the Arduino Library Manager or PlatformIO:
 
-
-HomeSpan
-Adafruit ADS1X15
-InfluxDB Client for Arduino
-
-
+- HomeSpan
+- Adafruit ADS1X15
+- InfluxDB Client for Arduino
 
 ## Configuration
 
@@ -43,11 +40,9 @@ The update interval is also set in DEV_Sensors.h:
 
 cppconst int timeupdate = 300000;  // milliseconds — default is 5 minutes
 
-
 How It Works
 
 Reading cycle (per sensor)
-
 
 GPIO pin powers up the sensor and ADS1115.
 A 2–3 second warm-up delay allows the ADC to stabilise.
