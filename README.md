@@ -58,7 +58,9 @@ The ADC value and humidity percentage are written to InfluxDB.
 
 Moisture calculation:
 
+```
 humidity% = 100 - ((adc_value / 32767) × 100)
+```
 
 A fully dry sensor reads near 32767 (maximum ADC output with GAIN_ONE), giving 0% humidity. A fully saturated sensor reads near 0, giving 100% humidity. If your sensors behave differently, adjust minadc / maxadc in DEV_Sensors.h to calibrate.
 
