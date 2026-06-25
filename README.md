@@ -89,4 +89,3 @@ Enter the default HomeSpan pairing code (printed to Serial on first boot, or see
 Calibration — Run the device in air (dry) and submerged in water to find your sensor's actual min/max ADC values, then update minadc / maxadc accordingly.
 ADC gain — The code uses GAIN_ONE (±4.096 V range). If your sensors output a narrower voltage range, switching to GAIN_TWO or GAIN_FOUR will improve resolution.
 Time sync — NTP time sync (timeSync) is called only during the Sensor 1 reading cycle. Sensors 2 and 3 reuse the synchronised clock.
-Serial baud rate — The sketch defaults to 9600 baud. Change to 115200 for faster debug output if needed.
