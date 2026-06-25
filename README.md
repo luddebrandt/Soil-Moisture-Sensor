@@ -11,11 +11,15 @@ This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) t
 - ADS1115 16-bit I²C ADC (reads up to 4 analog channels)
 - Capacitive soil moisture sensors
 
+Sensors are powered via dedicated GPIO pins so they are only energized during a reading cycle. This reduces electrolytic corrosion of the sensor probes.
 Pin Assignments:
 
-GPIOPurpose25Power control — Sensor 126Power control — Sensor 227Power control — Sensor 319Power control — ADS1115I²C (default)ADS1115 SDA/SCL
-
-Sensors are powered via dedicated GPIO pins so they are only energized during a reading cycle. This reduces electrolytic corrosion of the sensor probes.
+GPIO Pins:
+- 25 Power control Sensor 1
+- 26 Power control Sensor 2
+- 27 Power control Sensor 3
+- 19 Power control ADS1115
+- (default) ADS1115 SDA/SCL
 
 ## Software Dependencies
 
