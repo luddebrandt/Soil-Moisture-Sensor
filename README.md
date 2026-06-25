@@ -53,12 +53,12 @@ const int timeupdate = 300000;  // milliseconds - default is 5 minutes
 Reading cycle (per sensor):
 
 GPIO pin powers up the sensor and ADS1115.
-A 2–3 second warm-up delay allows the ADC to stabilise.
+A 2-3 second warm-up delay allows the ADC to stabilise.
 Five ADC readings are taken with 2-second gaps between each.
 The readings are sorted and the median is selected (outlier rejection).
 This is repeated twice and the two medians are averaged.
 The sensor and ADC are powered down.
-The raw ADC value is mapped to a 0–100% moisture range and sent to HomeKit.
+The raw ADC value is mapped to a 0-100% moisture range and sent to HomeKit.
 The ADC value and humidity percentage are written to InfluxDB.
 
 Moisture calculation:
