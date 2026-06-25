@@ -45,7 +45,7 @@ Open DEV_Sensors.h and fill in your InfluxDB credentials and timezone:
 The update interval is also set in DEV_Sensors.h:
 
 ```
-const int timeupdate = 300000;  // milliseconds — default is 5 minutes
+const int timeupdate = 300000;  // milliseconds - default is 5 minutes
 ```
 
 ## How It Works
@@ -71,7 +71,7 @@ A fully dry sensor reads near 32767 (maximum ADC output with GAIN_ONE), giving 0
 
 ## HomeKit integration
 
-The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridge / Greenhouse, with three child accessories (Soil Moisture Sensor 1–3), each exposing a CurrentRelativeHumidity characteristic. Apple Home will display them as humidity sensors.
+The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridge / Greenhouse, with three child accessories (Soil Moisture Sensor 1-3), each exposing a CurrentRelativeHumidity characteristic. Apple Home will display them as humidity sensors.
 
 ## File Structure
 
