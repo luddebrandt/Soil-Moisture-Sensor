@@ -39,7 +39,9 @@ Open DEV_Sensors.h and fill in your InfluxDB credentials and timezone:
 
 The update interval is also set in DEV_Sensors.h:
 
-cppconst int timeupdate = 300000;  // milliseconds — default is 5 minutes
+```
+const int timeupdate = 300000;  // milliseconds — default is 5 minutes
+```
 
 ## How It Works
 
