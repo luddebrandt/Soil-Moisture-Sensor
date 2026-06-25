@@ -7,8 +7,8 @@ This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) t
 
 ## Hardware
 
-- ESP32Main microcontroller (e.g. AZDelivery ESP32) 
-- ADS111516-bit I²C ADC (reads up to 4 analog channels)
+- ESP32 microcontroller (e.g. AZDelivery ESP32) 
+- ADS1115 16-bit I²C ADC (reads up to 4 analog channels)
 - Capacitive soil moisture sensors
 
 Pin Assignments
@@ -16,7 +16,6 @@ Pin Assignments
 GPIOPurpose25Power control — Sensor 126Power control — Sensor 227Power control — Sensor 319Power control — ADS1115I²C (default)ADS1115 SDA/SCL
 
 Sensors are powered via dedicated GPIO pins so they are only energized during a reading cycle. This reduces electrolytic corrosion of the sensor probes.
-
 
 ## Software Dependencies
 
@@ -53,17 +52,15 @@ The sensor and ADC are powered down.
 The raw ADC value is mapped to a 0–100% moisture range and sent to HomeKit.
 The ADC value and humidity percentage are written to InfluxDB.
 
-
 Moisture calculation
 
 humidity% = 100 - ((adc_value / 32767) × 100)
 
 A fully dry sensor reads near 32767 (maximum ADC output with GAIN_ONE), giving 0% humidity. A fully saturated sensor reads near 0, giving 100% humidity. If your sensors behave differently, adjust minadc / maxadc in DEV_Sensors.h to calibrate.
 
-HomeKit integration
+## HomeKit integration
 
 The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridge / Greenhouse, with three child accessories (Soil Moisture Sensor 1–3), each exposing a CurrentRelativeHumidity characteristic. Apple Home will display them as humidity sensors.
-
 
 ## File Structure
 
@@ -80,8 +77,6 @@ Flash the sketch to your ESP32.
 Open the Apple Home app and tap Add Accessory.
 Choose More options and select HomeSpan Bridge.
 Enter the default HomeSpan pairing code (printed to Serial on first boot, or see the HomeSpan docs).
-
-
 
 ## Notes & Tips
 
