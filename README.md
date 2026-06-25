@@ -1,7 +1,5 @@
 # Soil-Moisture-Sensor
-ESP32 connected to capacitive soil moisture sensors. Arduino project where the measured data is sent to InfluxDB and visualized using Grafana. The data is also available for Homekit using HomeSpan.
-
-An ESP32-based HomeKit bridge that monitors soil moisture across three sensors, exposes them to Apple Home via HomeSpan, and logs readings to InfluxDB and visualized using Grafana.
+An ESP32-based HomeKit bridge that monitors soil moisture across three capacitive sensors, exposes them to Apple Home via HomeSpan, and logs readings to InfluxDB and visualized using Grafana.
 
 
 Overview
