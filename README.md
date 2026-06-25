@@ -1,4 +1,4 @@
-# Soil-Moisture-Sensor
+# Soil Moisture Sensor
 An ESP32-based HomeKit bridge that monitors soil moisture across three capacitive sensors, exposes them to Apple Home via HomeSpan, and logs readings to InfluxDB and visualized using Grafana. Alerts can be generated when plants need to be watered.
 
 ## Overview
