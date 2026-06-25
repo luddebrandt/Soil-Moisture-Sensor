@@ -2,12 +2,12 @@
 An ESP32-based HomeKit bridge that monitors soil moisture across three capacitive sensors, exposes them to Apple Home via HomeSpan, and logs readings to InfluxDB and visualized using Grafana. Alerts can be generated when plants need to be watered.
 
 
-Overview
+## Overview
 
 This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) that reads three capacitive soil moisture sensors through an ADS1115 ADC. Each sensor is powered only during a reading to reduce corrosion and power consumption. Readings are reported to Apple Home as humidity values and pushed to an InfluxDB instance for long-term logging and dashboarding.
 
 
-Hardware
+## Hardware
 
 ComponentDescriptionESP32Main microcontroller (e.g. AZDelivery ESP32)ADS111516-bit I²C ADC (reads up to 4 analog channels)Capacitive soil moisture sensors × 3Connected to ADC channels 0, 1, and 2
 
@@ -18,7 +18,7 @@ GPIOPurpose25Power control — Sensor 126Power control — Sensor 227Power contr
 Sensors are powered via dedicated GPIO pins so they are only energized during a reading cycle. This reduces electrolytic corrosion of the sensor probes.
 
 
-Software Dependencies
+## Software Dependencies
 
 Install these libraries through the Arduino Library Manager or PlatformIO:
 
@@ -29,7 +29,7 @@ InfluxDB Client for Arduino
 
 
 
-Configuration
+## Configuration
 
 Open DEV_Sensors.h and fill in your InfluxDB credentials and timezone:
 
@@ -70,15 +70,16 @@ HomeKit integration
 The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridge / Greenhouse, with three child accessories (Soil Moisture Sensor 1–3), each exposing a CurrentRelativeHumidity characteristic. Apple Home will display them as humidity sensors.
 
 
-File Structure
+## File Structure
 
-Soil-Moisture-Sensor.ino   Main sketch — HomeSpan setup and accessory tree
-DEV_Sensors.h              Sensor service definitions and InfluxDB logging
-DEV_Identify.h             Accessory identification / LED blink routine
+```
+.
+├── Soil-Moisture-Sensor.ino         # Main sketch with HomeSpan setup and accessory tree
+├── DEV_Sensors.h       # Sensor service definitions and InfluxDB logging
+└── DEV_Identify.h       # Accessory identification / LED blink routine
+```
 
-
-Pairing with Apple Home
-
+## Pairing with Apple Home
 
 Flash the sketch to your ESP32.
 Open the Apple Home app and tap Add Accessory.
@@ -87,8 +88,7 @@ Enter the default HomeSpan pairing code (printed to Serial on first boot, or see
 
 
 
-Notes & Tips
-
+## Notes & Tips
 
 Calibration — Run the device in air (dry) and submerged in water to find your sensor's actual min/max ADC values, then update minadc / maxadc accordingly.
 ADC gain — The code uses GAIN_ONE (±4.096 V range). If your sensors output a narrower voltage range, switching to GAIN_TWO or GAIN_FOUR will improve resolution.
