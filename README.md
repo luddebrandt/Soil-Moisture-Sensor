@@ -19,7 +19,7 @@ GPIO Pins:
 - 26 Power control Sensor 2
 - 27 Power control Sensor 3
 - 19 Power control ADS1115
-- (default) ADS1115 SDA/SCL
+- 21 and 22 ADS1115 SDA/SCL
 
 ## Software Dependencies
 
