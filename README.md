@@ -29,11 +29,13 @@ Install these libraries through the Arduino Library Manager or PlatformIO:
 
 Open DEV_Sensors.h and fill in your InfluxDB credentials and timezone:
 
-cpp#define INFLUXDB_URL   ""   // e.g. "https://us-east-1-1.aws.cloud2.influxdata.com"
+```
+#define INFLUXDB_URL   ""   // e.g. "https://us-east-1-1.aws.cloud2.influxdata.com"
 #define INFLUXDB_TOKEN ""   // your InfluxDB API token
 #define INFLUXDB_ORG   ""   // your organisation name
 #define INFLUXDB_BUCKET ""  // target bucket
 #define TZ_INFO        ""   // e.g. "CET-1CEST,M3.5.0,M10.5.0/3"
+```
 
 The update interval is also set in DEV_Sensors.h:
 
