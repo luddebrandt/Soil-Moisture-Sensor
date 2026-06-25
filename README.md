@@ -66,9 +66,9 @@ The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridg
 
 ```
 .
-├── Soil-Moisture-Sensor.ino         # Main sketch with HomeSpan setup and accessory tree
-├── DEV_Sensors.h       # Sensor service definitions and InfluxDB logging
-└── DEV_Identify.h       # Accessory identification / LED blink routine
+├── Soil-Moisture-Sensor.ino    # Main sketch with HomeSpan setup and accessory tree
+├── DEV_Sensors.h               # Sensor service definitions and InfluxDB logging
+└── DEV_Identify.h              # Accessory identification / LED blink routine
 ```
 
 ## Pairing with Apple Home
