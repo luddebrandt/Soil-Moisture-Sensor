@@ -11,7 +11,7 @@ This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) t
 - ADS1115 16-bit I²C ADC (reads up to 4 analog channels)
 - Capacitive soil moisture sensors
 
-Pin Assignments
+Pin Assignments:
 
 GPIOPurpose25Power control — Sensor 126Power control — Sensor 227Power control — Sensor 319Power control — ADS1115I²C (default)ADS1115 SDA/SCL
 
@@ -68,7 +68,7 @@ The bridge presents itself to HomeKit as a Bridge accessory named HomeSpan Bridg
 .
 ├── Soil-Moisture-Sensor.ino    # Main sketch with HomeSpan setup and accessory tree
 ├── DEV_Sensors.h               # Sensor service definitions and InfluxDB logging
-└── DEV_Identify.h              # Accessory identification / LED blink routine
+└── DEV_Identify.h              # Accessory identification
 ```
 
 ## Pairing with Apple Home
