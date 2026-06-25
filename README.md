@@ -12,6 +12,7 @@ This project turns an ESP32 into a HomeKit bridge (using the HomeSpan library) t
 - Capacitive soil moisture sensors (e.g. AZDelivery Soil Moisture Sensor Hygrometer Module V1.2)
 
 Sensors are powered via dedicated GPIO pins so they are only energized during a reading cycle. This reduces electrolytic corrosion of the sensor probes.
+
 Pin Assignments:
 
 GPIO Pins:
